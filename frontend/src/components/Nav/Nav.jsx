@@ -3,8 +3,8 @@
 
 const Nav = () => {
   return (
-      <nav className=" h-full w-1/4 bg-black">
-      
+      <nav className="flex h-full w-1/4 bg-black justify-center py-16">
+        <h1 className="text-white text-5xl">Doth</h1>
       </nav>
   );
 };
