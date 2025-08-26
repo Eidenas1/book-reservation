@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Search = () => {
-  // Here existed text which user want to search
+
   const [query, setQuery] = useState("");
 
   const handleChange = (e) => {
@@ -9,22 +9,22 @@ const Search = () => {
   };
 
   const handleSubmit = (e) => {
-    // Prevent default need for do not reload page while
-    // enter values
+
     e.preventDefault();
-    // Handle search logic here
+
     alert(`Searching for: ${query}`);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="h-full w-full flex">
       <input
         type="text"
         placeholder="Search..."
         value={query}
         onChange={handleChange}
+        id="search"
+        className="w-full h-[3.25rem] bg-[#d6d2bc] rounded-3xl px-8 shadow-[inset_0_0_0.35rem_rgba(0,0,0,0.9)] font-sans placeholder-root"
       />
-      <button type="submit">Search</button>
     </form>
   );
 };
