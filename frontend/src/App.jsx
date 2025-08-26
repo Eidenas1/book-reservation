@@ -4,7 +4,7 @@ import MainPage from "./pages/MainPage/MainPage";
 // In bigger pages somethimes creating separate file for layouts
 function App() {
   return <> 
- <MainPage/>
+   <MainPage/>
   </>;
 }
 
