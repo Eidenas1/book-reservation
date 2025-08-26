@@ -1,1 +1,1 @@
-# vasarosProjektasJs
+# book-registration
