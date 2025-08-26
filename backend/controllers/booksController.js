@@ -1,15 +1,13 @@
 const {
-  getAllToursM,
+  getAllBooksM,
 } = require("../models/booksModel");
-const { validationResult } = require("express-validator");
-const AppError = require("../utils/appError");
 
-exports.getAllTours = async (req, res, next) => {
+exports.getAllBooks = async (req, res, next) => {
   try {
-    const toursList = await getAllToursM();
+    const booksList = await getAllBooksM();
     res.status(200).json({
       status: "success",
-      tours: toursList,
+      books: booksList,
     });
   } catch (error) {
     next(error);
