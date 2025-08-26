@@ -6,8 +6,8 @@ const Nav = () => {
   return (
     <nav className="flex flex-col h-full w-1/4 bg-black gap-y-32 px-8 py-16">
       <h1 className="text-white text-7xl text-center">Doth</h1>
-      <div className="flex gap-y-24 flex-col">
-        <div className="flex flex-row gap-8">
+      <div className="flex gap-y-24 items-center w-full flex-col">
+        <div className="flex flex-row gap-16">
           <img src={login_icon} alt="Log in Icon" width={35} />
           <div className="flex flex-col w-max gap-8">
             <motion.button
@@ -24,7 +24,7 @@ const Nav = () => {
             </motion.button>
           </div>
         </div>
-        <div className="flex flex-row w-max gap-8">
+        <div className="flex flex-row w-max gap-16">
           <img src={book_icon} alt="Book List Icon" width={35} />
           <Link to="/">
             <motion.button
