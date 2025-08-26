@@ -4,8 +4,7 @@
 const Nav = () => {
   return (
     <nav>
-      <h2>Navigation</h2>
-      {/* Add navigation links here */}
+      
     </nav>
   );
 };
