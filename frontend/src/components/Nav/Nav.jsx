@@ -3,9 +3,11 @@
 
 const Nav = () => {
   return (
-    <nav>
+    <div className="w-full h-full p-8 flex">
+      <nav className="flex w-full h-[4rem] bg-[#950606]/[var(--bg-opacity)] [--bg-opacity:20%] backdrop-blur-md rounded-3xl">
       
-    </nav>
+      </nav>
+    </div>
   );
 };
 
