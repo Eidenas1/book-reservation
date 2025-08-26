@@ -3,10 +3,11 @@
 
 const Nav = () => {
   return (
-    <nav>
-      <h2>Navigation</h2>
-      {/* Add navigation links here */}
-    </nav>
+    <div className="w-full h-full p-8 flex">
+      <nav className="flex w-full h-[4rem] bg-[#950606]/[var(--bg-opacity)] [--bg-opacity:20%] backdrop-blur-md rounded-3xl">
+      
+      </nav>
+    </div>
   );
 };
 
