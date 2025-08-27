@@ -1,11 +1,14 @@
 import "./App.css";
 import MainPage from "./pages/MainPage/MainPage";
+
 // App.jsx mostly used for add layouts, navbar, footers
 // In bigger pages somethimes creating separate file for layouts
 function App() {
-  return <> 
-   <MainPage/>
-  </>;
+  return (
+    <>
+        <MainPage />
+    </>
+  );
 }
 
 export default App;
