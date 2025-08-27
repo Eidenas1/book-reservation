@@ -1,31 +1,29 @@
 import { useState, useEffect } from "react";
-import { BooksContext } from "./contexts";
 import { getData } from "../services/get";
+import { BooksContext } from "./contexts";
 
-export const ExcursionContextProvider = ({ children }) => {
+export const BooksContextProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchBooks = async () => {
       try {
         const data = await getData("books");
-        setBooks(data.books); 
+        setBooks(data.books);
       } catch (error) {
         console.error("Error fetching books:", error);
-      } finally {
-        setLoading(false);
       }
     };
-
     fetchBooks();
   }, []);
 
-  return (
+    return (
     <BooksContext
-      value={{ books, setBooks, loading, setLoading }}
+      value={{ books, setBooks }}
     >
       {children}
     </BooksContext>
   );
 };
+
+
