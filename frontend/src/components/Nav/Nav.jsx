@@ -1,6 +1,7 @@
 import login_icon from "../../assets/login_icon.svg";
 import book_icon from "../../assets/book_icon.svg";
 import { Link } from "react-router";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 const Nav = () => {
   return (
