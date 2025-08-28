@@ -15,10 +15,10 @@ const BooksCard = ({ book }) => {
   };
   return (
     <Link>
-      <button className="relative w-full h-full">
+      <button className="relative w-full">
         {loading && (
           <div className="absolute inset-0 z-10 flex items-center justify-center bg-transparent">
-            <CircleLoader color="#d6d2bc" size={60} />
+            <CircleLoader color="#d6d2bc" size={45} />
           </div>
         )}
         <motion.div
