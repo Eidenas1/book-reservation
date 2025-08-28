@@ -3,7 +3,7 @@
 import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { CircleLoader } from "react-spinners";
 
 const BooksCard = ({ book }) => {
@@ -13,9 +13,9 @@ const BooksCard = ({ book }) => {
     fr: "https://flagcdn.com/fr.svg",
     es: "https://flagcdn.com/es.svg",
   };
-  return (
-    <Link>
-      <button className="relative w-full">
+  const navigate = useNavigate();
+    return (
+      <div className="relative w-full">
         {loading && (
           <div className="absolute inset-0 z-10 flex items-center justify-center bg-transparent">
             <CircleLoader color="#d6d2bc" size={45} />
@@ -24,6 +24,7 @@ const BooksCard = ({ book }) => {
         <motion.div
           whileHover={{ scale: 1.05 }}
           className={`text-center flex flex-col gap-4 ${loading ? 'opacity-0' : 'opacity-100'}`}
+          onClick={() => navigate(`/${book.book_id}`)}
         >
           <div className="gap-2 flex flex-col">
             <div className="relative w-full aspect-[2/3] min-h-[8rem] overflow-hidden">
@@ -55,8 +56,8 @@ const BooksCard = ({ book }) => {
             </div>
           )}
         </motion.div>
-      </button>
-    </Link>
+      </div>
+
   );
 };
 
