@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 const Nav = () => {
   return (
-    <nav className="flex flex-col sticky top-0 h-1/2 w-1/4 bg-black gap-y-32 px-8 py-16 z-20">
+    <nav className="flex flex-col sticky top-0 h-1/2 w-1/4 bg-black gap-y-32 px-8 py-16 z-20 max-md:hidden">
       <h1 className="text-white text-7xl text-center">Doth</h1>
       <div className="flex gap-y-24 items-center w-full flex-col">
         <div className="flex flex-row gap-16">

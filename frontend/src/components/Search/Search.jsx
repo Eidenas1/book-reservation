@@ -1,22 +1,26 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { BooksContext } from "../../contexts/contexts";
 
 const Search = () => {
 
   const [query, setQuery] = useState("");
+  const { allBooks, setBooks } = useContext(BooksContext);
 
   const handleChange = (e) => {
-    setQuery(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-
-    e.preventDefault();
-
-    alert(`Searching for: ${query}`);
+    const value = e.target.value;
+    setQuery(value);
+    const words = value.trim().toLowerCase().split(/\s+/);
+    const filtered = allBooks.filter(book =>
+      words.every(word =>
+        book.title.toLowerCase().includes(word) ||
+        book.author.toLowerCase().includes(word)
+      )
+    );
+    setBooks(filtered);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="h-max w-full flex">
+    <form className="h-max w-full flex" onSubmit={e => e.preventDefault()}>
       <input
         type="text"
         placeholder="Search..."
