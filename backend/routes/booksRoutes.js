@@ -2,11 +2,35 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  getAllBooks
+  createBook,
+  deleteBook,
+  updateBook,
+  getAllBooks,
+  searchBooks
 } = require("../controllers/booksController");
 
-router
-  .route("/").get(getAllBooks);
+const { validateNewBook } = require("../validators/newBook");
+const { validateUpdatedBook } = require("../validators/updateBook");
+const restrictToAdmin = require("../middleware/restrictToAdmin");
+const protect = require("../middleware/protect");
+const authMiddleware = require("../middleware/authMiddleware");
 
-  
+
+router
+  .route("/")
+  .get(getAllBooks)
+  .post(authMiddleware, protect, restrictToAdmin, validateNewBook, createBook);
+
+  router
+  .route("/:id")
+  .delete(deleteBook)
+  .put(
+    authMiddleware,
+    protect,
+    restrictToAdmin,
+    validateUpdatedBook,
+    updateBook
+  );
+
+router.route("/search").get(searchBooks);
 module.exports = router;

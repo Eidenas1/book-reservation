@@ -17,3 +17,30 @@ exports.getAllBooksM = async () => {
   `;
   return booksList;
 };
+
+exports.deleteBook = async (id) => {
+  const book = await sql`
+   DELETE FROM books
+   WHERE books.book_id = ${id}
+   returning *
+    `;
+  return book;
+};
+
+exports.updateBook = async (id, updatedBook) => {
+  const book = await sql`
+    update books set ${sql(
+      updatedBook,
+      "title",
+      "author",
+      "isbn",
+      "published_date",
+      "language",
+      "cover_url",
+      "description"
+    )}
+    where id = ${id}
+    returning *;
+  `;
+  return book[0];
+};
