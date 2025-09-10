@@ -30,7 +30,7 @@ exports.signup = async (req, res, next) => {
   }
   try {
     const newUser = req.body;
-
+     newUser.role = "user";
     const hash = await argon2.hash(newUser.password);
     newUser.password = hash;
 
@@ -46,6 +46,7 @@ exports.signup = async (req, res, next) => {
 
     createdUser.password = undefined;
     createdUser.id = undefined;
+  
 
     res.status(201).json({
       status: "success",
